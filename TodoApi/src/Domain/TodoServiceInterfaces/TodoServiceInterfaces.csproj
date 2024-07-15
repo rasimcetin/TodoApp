@@ -1,5 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\TodoRepositoryInterfaces\TodoRepositoryInterfaces.csproj" />
+    <ProjectReference Include="..\TodoEntities\TodoEntities.csproj" />
+    <ProjectReference Include="..\TodoDtos\TodoDtos.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

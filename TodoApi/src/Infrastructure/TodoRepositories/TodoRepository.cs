@@ -29,13 +29,22 @@ public class TodoRepository (TodoDbContext dbContext) : ITodoRepository
                 
     }
 
-    public Task<Todo?> GetByIdAsync(Guid id)
+    public Task<TodoDto?> GetByIdAsync(Guid id)
     {
-        throw new NotImplementedException();
+        return dbContext.Todos.Where(x => x.Id == id)
+                              .Select(t => new TodoDto(t.Id, t.Description, t.IsCompleted, t.UntilDate))
+                              .FirstOrDefaultAsync();
+    }
+
+    public Task<Todo?> GetTodoEntityByIdAsync(Guid id)
+    {
+        return dbContext.Todos.Where(x => x.Id == id).FirstOrDefaultAsync();
     }
 
     public Task UpdateAsync(Todo todo)
     {
-        throw new NotImplementedException();
+        dbContext.Todos.Update(todo);
+        return dbContext.SaveChangesAsync();
     }
+    
 }
