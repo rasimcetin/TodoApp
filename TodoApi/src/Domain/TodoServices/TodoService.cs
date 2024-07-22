@@ -19,7 +19,7 @@ public class TodoService : ITodoService
         var todo = new Todo
         {
             Id = Guid.NewGuid(),
-            Description = newTodo.Description,
+            Title = newTodo.Title,
             IsCompleted = false,
             UntilDate = newTodo.UntilDate,
         };
@@ -52,7 +52,7 @@ public class TodoService : ITodoService
             return Task.CompletedTask;
         }
 
-        todoEntity.Description = todoDto.Description;
+        todoEntity.Title = todoDto.Title;
         todoEntity.IsCompleted = todoDto.IsCompleted;
         todoEntity.UntilDate = todoDto.UntilDate;
         todoRepository.UpdateAsync(todoEntity);

@@ -24,7 +24,8 @@ public class TodoRepository (TodoDbContext dbContext) : ITodoRepository
     public Task<List<TodoDto>> GetAllAsync()
     {
        return dbContext.Todos
-                .Select(x => new TodoDto(x.Id, x.Description, x.IsCompleted, x.UntilDate))
+                .OrderBy(x => x.Title)
+                .Select(x => new TodoDto(x.Id, x.Title, x.IsCompleted, x.UntilDate))
                 .ToListAsync(); 
                 
     }
@@ -32,7 +33,7 @@ public class TodoRepository (TodoDbContext dbContext) : ITodoRepository
     public Task<TodoDto?> GetByIdAsync(Guid id)
     {
         return dbContext.Todos.Where(x => x.Id == id)
-                              .Select(t => new TodoDto(t.Id, t.Description, t.IsCompleted, t.UntilDate))
+                              .Select(t => new TodoDto(t.Id, t.Title, t.IsCompleted, t.UntilDate))
                               .FirstOrDefaultAsync();
     }
 

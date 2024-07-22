@@ -1,3 +1,3 @@
 ﻿namespace TodoDtos;
 
-public record TodoDto(Guid Id, string Description, bool IsCompleted, DateTimeOffset UntilDate);
+public record TodoDto(Guid Id, string Title, bool IsCompleted, DateTimeOffset UntilDate);

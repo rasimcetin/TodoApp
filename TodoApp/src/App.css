@@ -1,0 +1,106 @@
+main {
+  margin-top: 2rem;
+  height: 100vh;
+  border-style: solid;
+  border-color: blackslategray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+todo-list {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-color: blackslategray;
+  margin-bottom: 1rem;
+  width: 50%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.todo {
+  font-size: 2rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  border-style: solid;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-color: blackslategray;
+}
+
+.todo:hover {
+  background-color: lightgray;
+}
+
+.new-todo-item {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  border-style: solid;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-color: blackslategray;
+}
+
+.new-todo-item input[type="text"] {
+  flex-grow: 1;
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-color: blackslategray;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.new-todo-item button {
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-color: blackslategray;
+  padding: 0.5rem 0.75rem;
+  background-color: lightgray;
+  color: black;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+
+.new-todo-item button svg {
+  width: 3rem;
+  height: 3rem;
+  fill: black;
+  vertical-align: middle;
+}
+
+.todo > input[type="checkbox"] {
+  width: 1.5rem;
+  text-align: center;
+}
+
+.todo > button > svg {
+  width: 2rem;
+  height: 2rem;
+  fill: black;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+button {
+  cursor: pointer;
+}
