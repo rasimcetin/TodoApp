@@ -45,7 +45,7 @@ function App() {
   }
 
   return (
-    <div className="main">
+    <div className="container">
       <h1>Todo List</h1>
       <NewTodoItem
         todoTitle={todoTitle}

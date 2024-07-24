@@ -1,106 +1,168 @@
-main {
-  margin-top: 2rem;
-  height: 100vh;
-  border-style: solid;
-  border-color: blackslategray;
+.container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 3rem;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
 }
 
-todo-list {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border-style: solid;
-  border-color: blackslategray;
-  margin-bottom: 1rem;
-  width: 50%;
+.container > h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #333;
 }
 
-h1 {
-  text-align: center;
-  font-size: 3rem;
+.container ul {
+  list-style: none;
 }
 
-.todo {
-  font-size: 2rem;
-  margin: 0.5rem;
+.new-todo {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  gap: 0.5rem;
-  border-style: solid;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  border-color: blackslategray;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  max-width: 600px;
+  width: 100%;
 }
 
-.todo:hover {
-  background-color: lightgray;
+.new-todo input[type="text"] {
+  height: auto;
+  flex-basis: 850%;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: background-color 0.3s ease;
 }
 
-.new-todo-item {
-  margin: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 0.5rem;
-  border-style: solid;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  border-color: blackslategray;
-}
-
-.new-todo-item input[type="text"] {
-  flex-grow: 1;
-  border-radius: 0.5rem;
-  border-style: solid;
-  border-color: blackslategray;
-  padding: 0.5rem;
-  font-size: 1.5rem;
-}
-
-.new-todo-item button {
-  border-radius: 0.5rem;
-  border-style: solid;
-  border-color: blackslategray;
-  padding: 0.5rem 0.75rem;
-  background-color: lightgray;
-  color: black;
-  font-weight: bold;
-  font-size: 2rem;
-  margin-left: 0.5rem;
-}
-
-.new-todo-item button svg {
-  width: 3rem;
-  height: 3rem;
-  fill: black;
-  vertical-align: middle;
-}
-
-.todo > input[type="checkbox"] {
-  width: 1.5rem;
-  text-align: center;
-}
-
-.todo > button > svg {
-  width: 2rem;
-  height: 2rem;
-  fill: black;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  margin: 0.5rem 0;
-}
-
-button {
+.new-todo button {
+  flex-basis: 15%;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  display: flex;
+  transition: background-color 0.3s ease;
+}
+
+.new-todo button:hover {
+  background-color: #0069d9;
+}
+
+.new-todo button svg {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  padding-top: 3px;
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  font-size: 20px;
+}
+
+.new-todo button span {
+  display: inline-block;
+  font-size: 16px;
+  padding-top: 3px;
+  font-weight: 700;
+}
+
+.todo-list {
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.todo-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-list li > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-basis: 70%;
+  font-size: 16px;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  /* Remove default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* Create a circular shape */
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid #0069d9;
+  border-radius: 50%;
+  background-color: #0069d9;
+
+  /* Align for better positioning */
+  vertical-align: middle;
+  position: relative;
+  margin-right: 0.5em;
+}
+
+/* Style for checked state */
+input[type="checkbox"]:checked {
+  background-color: #0069d9;
+}
+
+/* Optional: Add a checkmark */
+input[type="checkbox"]:checked::before {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1em;
+}
+
+.todo-list li > div > p {
+  margin-left: 10px;
+}
+
+.todo-list li button {
+  background-color: #e4122e;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  transition: background-color 0.3s ease;
+}
+
+.todo-list li button > svg {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 1;
+  font-size: 15px;
+  transition: width 0.3s ease;
+  transition: height 0.3s ease;
+}
+
+.todo-list li button > svg:hover {
+  width: 28px;
+  height: 28px;
 }

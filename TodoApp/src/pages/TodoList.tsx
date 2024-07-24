@@ -7,16 +7,14 @@ export interface TodoListProps {
 
 function TodoList({ todos }: TodoListProps) {
   return (
-    <div className="todo-list">
-      <ul>
-        {todos &&
-          todos.map((todo) => (
-            <li key={todo.id}>
-              <TodoItem todo={todo} />
-            </li>
-          ))}
-      </ul>
-    </div>
+    <ul className="todo-list">
+      {todos &&
+        todos.map((todo) => (
+          <li key={todo.id}>
+            <TodoItem todo={todo} />
+          </li>
+        ))}
+    </ul>
   );
 }
 

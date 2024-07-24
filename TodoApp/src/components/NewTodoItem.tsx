@@ -12,21 +12,18 @@ function NewTodoItem({
   createTodo,
 }: NewTodoItemProps) {
   return (
-    <div className="new-todo-item">
+    <div className="new-todo">
       <input
         type="text"
         value={todoTitle}
         onChange={(e) => setTodoTitle(e.target.value)}
+        placeholder="What needs to be done?"
       />
       <button onClick={createTodo}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 -960 960 960"
-          fill="#5f6368"
-        >
-          <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
         </svg>
-        Add
+        <span>Add</span>
       </button>
     </div>
   );
